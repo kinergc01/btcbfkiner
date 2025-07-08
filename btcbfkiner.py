@@ -76,13 +76,13 @@ class Btcbf():
             print("Wow matching address found!!")
             print("Public Adress: "+key.address)
             print("Private Key: "+key.to_wif())
-            subject = "Wow matching address found!!"
-            body = f"Wow matching address found!!\n\nPublic Address: {key.address}\nPrivate Key: {key.to_wif()}"
-            self.send_email(subject, body)
             f = open("foundkey.txt", "a") # the found privatekey and address saved to "foundkey.txt"
             f.write(key.address+"\n")
             f.write(key.to_wif()+"\n")
             f.close()
+			subject = "Wow matching address found!!"
+            body = f"Wow matching address found!!\n\nPublic Address: {key.address}\nPrivate Key: {key.to_wif()}"
+            self.send_email(subject, body)
             sleep(510)
             exit()
             

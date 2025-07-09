@@ -80,7 +80,7 @@ class Btcbf():
             f.write(key.address+"\n")
             f.write(key.to_wif()+"\n")
             f.close()
-			subject = "Wow matching address found!!"
+            subject = "Wow matching address found!!"
             body = f"Wow matching address found!!\n\nPublic Address: {key.address}\nPrivate Key: {key.to_wif()}"
             self.send_email(subject, body)
             sleep(510)
